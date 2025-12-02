@@ -1,0 +1,122 @@
+package com.kiran.collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Vector;
+
+public class LinkedListPratice {
+	public static void main(String[] args) {
+		
+		/*
+		 * LinkedList  --- Introduced in Java 1.2 (Collections Framework)
+		 * Collection  --- Part of List, Deque interfaces
+		 * Generics    --- Introduced in Java 1.5 <Wrapper Class | Objects>
+		 *
+		 * Size        --- Number of elements currently stored
+		 * Capacity    --- Not applicable (LinkedList uses nodes, not arrays)
+		 *                 LinkedList<String> ll = new LinkedList<>();
+		 *
+		 *
+		 * Default Capacity                  --- Not applicable (No internal array)
+		 * Initial Capacity                  --- Not applicable
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer random access               --- No (Traversal required, O(n))
+		 * Synchronized (One task at a time) --- No
+		 * Thread Safe                       --- No
+		 *
+		 * Internal Structure                --- Doubly Linked List (Each node has prev & next)
+		 *
+		 * What is it good at?               --- Best for insertion & deletion operations
+		 *                                      Frequent add/remove from start/middle/end,
+		 *                                      Implementing queues, deques, task scheduling.
+		 *
+		 * Performance                       --- add/remove = O(1)
+		 *                                      get/search = O(n)
+		 *
+		 * Limitations                       --- Consumes more memory than ArrayList
+		 *                                      Slow for index-based access
+		 */
+		
+		// Creation of a LinkedList
+		List<String> llc1 = new ArrayList<>();
+		
+		
+		// Addition of elements into the list
+		llc1.add("Manikyam");
+		llc1.add(2, "Kiran");
+		llc1.addFirst("Rattaiah");
+		llc1.add("Vamsi");
+		llc1.addLast("Akash");
+		
+		System.out.println(llc1);
+		
+		List<String> llc2 = new ArrayList<>();
+		llc2.add("Ravi");
+		llc2.add("Mohan");
+		llc2.add("Vasanth");
+		llc2.add("Yesu");
+		llc2.add(2,"Pradeep");
+		llc2.add(null);
+		
+		Vector<String> llc3 = new Vector<>();
+		llc3.addAll(llc2);
+		llc3.addAll(0,llc1);
+		
+		System.out.println("Size: " + llc1.size());  // No Capacity Method
+		System.out.println(llc1);
+		System.out.println(llc2);
+		System.out.println(llc3);
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(llc1.get(6));
+		System.out.println(llc2.getLast());
+		System.out.println(llc2.getFirst());
+		System.out.println(llc1.getClass());
+		System.out.println(llc1.toString());
+		
+		
+		System.out.println("\n");
+		// Deletion of elements from the list
+		System.out.println(llc1.remove(9));
+		System.out.println(llc1.remove("Bakash"));
+		
+		llc2.clear();    // vc2.removeAllElements(); both same print []
+		
+		System.out.println(llc1);
+		System.out.println(llc2);
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(llc1.contains("Kiran"));
+		System.out.println(llc2.containsAll(llc1));
+		
+		System.out.println(llc1);
+		System.out.println(llc2);
+		
+		
+		System.out.println("\n");
+		// Updation of the elements in the list
+		llc1.set(0, "Davidu");
+		
+		System.out.println(llc1);
+	
+		
+		System.out.println("\n");
+		// List<Vector> to convert Array
+		Object[] arr = llc1.toArray();
+		System.out.println(Arrays.toString(arr));
+		
+		System.out.println(llc1);
+		System.out.println(llc2);
+		
+		
+
+	}
+}

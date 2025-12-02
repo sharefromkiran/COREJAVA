@@ -1,0 +1,137 @@
+package com.kiran.collection;
+
+import java.util.*;
+
+public class VectorPratice {
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * Vector     --- java 1.0 
+		 * Collection --- java 1.2
+		 * Generics   --- java 1.5 <Wrapper Class | Objects>
+		 * Size       --- No.of elements present in list 
+		 * Capacity   --- Array capacity - 10 but you can give any size
+		 *                Vector<String> vc1 = new Vector<>(20);
+		 * 
+		 * 
+		 * Default Capacity                  --- 10  
+		 * Initial Capacity                  --- 10
+		 * Allow Duplicaties                 --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer the random access           --- Yes
+		 * Synchronized (One Task at Time)   --- Yes
+		 * Thread Safe                       --- Yes but outdateb because overhead/slow
+		 * What is it good at?               --- Multi Threading, Data Increase Exponentially
+		 * 
+		 */
+		
+		
+		// Creation of a vector
+		Vector<String> vc1 = new Vector<>();
+		
+		
+		
+		// Addition of elements into the list
+		vc1.add("Rattaiah");
+		vc1.add("Manikyam");
+		vc1.add("Kiran");
+		vc1.add("Vamsi");
+		vc1.add("Akash");
+		
+		Vector<String> vc2 = new Vector<>();
+		vc2.add("Ravi");
+		vc2.add("Mohan");
+		vc2.add("Vasanth");
+		vc2.add("Yesu");
+		vc2.add(2,"Pradeep");
+		vc2.add(null);
+		
+		
+		Vector<String> vc3 = new Vector<>();
+		vc3.addAll(vc2);
+		vc3.addAll(0,vc1);
+		
+		System.out.println("Size: " + vc1.size());
+		System.out.println("capacity: " + vc1.capacity());
+		System.out.println(vc1);
+		System.out.println(vc2);
+		System.out.println(vc3);
+		
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(vc1.get(6));
+		System.out.println(vc2.getLast());
+		System.out.println(vc2.getFirst());
+		System.out.println(vc1.getClass());
+		System.out.println(vc1.toString());
+		System.out.println(vc1.firstElement());
+		System.out.println(vc1.lastElement());
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Deletion of elements from the list
+		System.out.println(vc1.remove(9));
+		System.out.println(vc1.remove("Bakash"));
+		
+		vc2.clear();    // vc2.removeAllElements(); both same print []
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(vc1);
+		System.out.println(vc2);
+		System.out.println(vc1.contains("Kiran"));
+		System.out.println(vc2.containsAll(vc1));
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Updation of the elements in the list
+		vc1.set(0, "Davidu");
+		System.out.println(vc1);
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		
+		System.out.println("\n");
+		// List<Vector> to convert Array
+		Object[] arr = vc1.toArray();
+		System.out.println(Arrays.toString(arr));
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Array to convert List<Vector>
+		Object[] array = new Object[] {1,4,3,5,6,7};
+		Vector<Object> vc4 = new Vector<>(Arrays.asList(array));
+		
+		System.out.println(vc4); 
+		
+		// Size and Capacity Defalut like array elements.
+		System.out.println("Size: " + vc4.size());           
+		System.out.println("capacity: " + vc4.capacity());
+		
+	}
+}

@@ -1,0 +1,53 @@
+package com.kiran.collection;
+
+import java.util.Stack;
+
+public class StackPratice {
+	public static void main(String[] args) {
+		
+		/*
+		 * Stack        --- Java 1.0 Legacy Class (Extends Vector)
+		 * Collection   --- Added into Collections Framework in Java 1.2
+		 *
+		 * Size         --- Number of elements currently stored
+		 * Capacity     --- Internal array size (Inherited from Vector, Default = 10)
+		 *                  Stack<Integer> st = new Stack<>();
+		 *
+		 *
+		 * Default Capacity                  --- 10  (From Vector)
+		 * Initial Capacity                  --- 10  (Can be increased explicitly)
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer random access               --- Yes (Because internally uses Vector → array)
+		 * Synchronized (One task at a time) --- Yes (Inherited from Vector)
+		 * Thread Safe                       --- Yes (But outdated due to overhead)
+		 *
+		 * Expansion Rule                    --- New capacity = old capacity * 2
+		 *                                      (Same as Vector, doubles when full)
+		 *
+		 * What is it good at?               --- LIFO operations (push, pop, peek),
+		 *                                      Reversing data,
+		 *                                      Expression evaluation (prefix/postfix),
+		 *                                      Backtracking algorithms (DFS, undo operations).
+		 *
+		 * Limitation                        --- Legacy class,
+		 *                                      Slower due to synchronization,
+		 *                                      Recommended alternative → Deque (ArrayDeque, LinkedList)
+		 */
+		
+		
+		// Creation of a vector
+		Stack<String> sc1 = new Stack<>();
+		
+		
+		// Addition of elements into the list
+		sc1.add("Rattaiah");
+		sc1.add("Manikyam");
+		sc1.add("Kiran");
+		sc1.add("Vamsi");
+		sc1.add("Akash");
+
+	}
+}

@@ -1,0 +1,45 @@
+package com.kiran.collection;
+
+import java.util.ArrayList;
+
+public class ArrayListPratice {
+	public static void main(String[] args) {
+
+		/*
+		 * ArrayList     --- java 1.0 
+		 * Collection --- java 1.2
+		 * Generics   --- java 1.5 <Wrapper Class | Objects>
+		 * Size       --- No.of elements present in list 
+		 * Capacity   --- Array capacity - 10 but you can give any size
+		 *                Vector<String> vc1 = new Vector<>(20);
+		 * 
+		 * 
+		 * Default Capacity                  --- 10  
+		 * Initial Capacity                  --- 0
+		 * Allow Duplicaties                 --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer the random access           --- Yes
+		 * Synchronized (One Task at Time)   --- Yes
+		 * Thread Safe                       --- Yes but outdateb because overhead/slow
+		 * What is it good at?               --- Multi Threading, Data Increase Exponentially
+		 * 
+		 */
+
+		// Creation of a vector
+		ArrayList<String> alc1 = new ArrayList<>();
+
+
+		// Addition of elements into the list
+		alc1.add("Rattaiah");
+		alc1.add("Manikyam");
+		alc1.add("Kiran");
+		alc1.add("Vamsi");
+		alc1.add("Akash");
+
+		ArrayList<String> alc2 = new ArrayList<>();
+
+		System.out.println(alc1);
+	}
+}

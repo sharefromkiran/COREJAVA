@@ -1,0 +1,14 @@
+package com.kiran.arrays;
+
+public class sumArray {
+
+	public int sumArray() {
+		return 0;
+		
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}

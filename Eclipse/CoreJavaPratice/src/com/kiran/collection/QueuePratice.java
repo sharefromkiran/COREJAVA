@@ -1,0 +1,288 @@
+package com.kiran.collection;
+
+import java.util.ArrayDeque;
+import java.util.Comparator;
+import java.util.Deque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class QueuePratice {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Queue = FIFO data structure where elements enter from rear and exit from front.
+		 * 
+		 * Queue        --- Introduced in Java 1.5 (Collections Framework)
+		 * Package      --- java.util
+		 * Interfaces   --- Queue, Deque, BlockingQueue, etc.
+		 * Generics     --- Supported <Wrapper Class | Objects>
+		 *
+		 * Concept      --- Follows FIFO (First In, First Out)
+		 *                  Elements added at the rear (offer)
+		 *                  Elements removed from the front (poll)
+		 *
+		 * Size         --- Number of elements currently stored
+		 * Capacity     --- Depends on implementation
+		 *                  (LinkedList → No fixed capacity, ArrayDeque → Dynamic capacity)
+		 *
+		 *
+		 * Allow Duplicates                  --- Yes (Most implementations)
+		 * Allow null values                 --- No (Queue generally disallows null — optional)
+		 * Maintain the insertion order      --- Yes (FIFO)
+		 * Maintain the sorted order         --- Only in PriorityQueue
+		 * Offer random access               --- No (Traversal required)
+		 * Synchronized                      --- No (Except ConcurrentLinkedQueue, BlockingQueue)
+		 * Thread Safe                       --- Not by default
+		 *
+		 *
+		 * Common Implementations:
+		 * ---------------------------------
+		 * LinkedList       --- FIFO Queue (non-synchronized)
+		 * ArrayDeque       --- Fast Queue/Deque (recommended)
+		 * PriorityQueue    --- Sorted Queue (min-heap)
+		 * ConcurrentLinkedQueue --- Thread-safe non-blocking queue
+		 * BlockingQueue    --- Thread-safe + waits if full/empty (Producer-Consumer)
+		 *
+		 *
+		 * What is it good at?               --- Scheduling tasks,
+		 *                                      Processing requests in order,
+		 *                                      BFS algorithms,
+		 *                                      Producer-Consumer problems,
+		 *                                      Buffering (I/O, networking),
+		 *                                      Message queues.
+		 *
+		 * Important Queue Methods:
+		 * ---------------------------------
+		 * offer()   --- Insert element (no exception)
+		 * add()     --- Insert element (throws exception on failure)
+		 * poll()    --- Remove and return front element (no exception)
+		 * remove()  --- Remove and return front element (throws exception)
+		 * peek()    --- View front element (no exception)
+		 * element() --- View front element (throws exception)
+		 *
+		 *
+		 * Limitations                        --- No random access,
+		 *                                      Some queues do not allow null,
+		 *                                      PriorityQueue does NOT maintain insertion order.
+		 */
+		
+		
+		// ************************************* PriorityQueue **************************************************
+		// Creation of a PriorityQueue
+		Queue<String> pqc1 = new PriorityQueue<>(Comparator.reverseOrder());
+		
+		/*
+		 * PriorityQueue → A special queue where elements are processed based on priority, not order of insertion.
+		 * 
+		 * PriorityQueue --- Introduced in Java 1.5 (Collections Framework)
+		 * Package       --- java.util
+		 * Generics      --- Supported <Wrapper Class | Objects>
+		 *
+		 * Concept       --- A Queue where elements are ordered by PRIORITY
+		 *                   (Not FIFO)
+		 *                   By default → MIN-HEAP (smallest element first)
+		 *
+		 * Size          --- Number of elements currently stored
+		 * Capacity      --- Grows automatically (Default = 11)
+		 *                   PriorityQueue<Integer> pq = new PriorityQueue<>(20);
+		 *
+		 * Default Capacity                  --- 11
+		 * Initial Capacity                  --- 11
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- No (Null not allowed)
+		 * Maintain insertion order          --- No
+		 * Maintain sorted order             --- No, Internally yes (Heap), but not for iteration
+		 * Random Access                     --- No
+		 * Synchronized                      --- No
+		 * Thread Safe                       --- No (Use PriorityBlockingQueue for thread-safety)
+		 *
+		 *
+		 * Internal Structure                --- Binary Heap (Min-Heap by default)
+		 *
+		 *
+		 * What is it good at?               --- Scheduling tasks,
+		 *                                      Handling highest/lowest priority items,
+		 *                                      Dijkstra’s algorithm,
+		 *                                      CPU scheduling,
+		 *                                      Real-time task processing.
+		 *
+		 *
+		 * Important PriorityQueue Methods:
+		 * ---------------------------------
+		 * offer(element)       --- Insert element
+		 * add(element)         --- Insert (throws exception if fails)
+		 * peek()               --- View highest-priority element
+		 * poll()               --- Remove and return highest-priority element
+		 * remove()             --- Remove and return (throws exception)
+		 * comparator()         --- Returns custom comparator (if provided)
+		 *
+		 *
+		 * Custom Priority Example:
+		 * ---------------------------------
+		 * PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+		 * (Now it works as Max-Heap)
+		 *
+		 *
+		 * Limitations                        --- Does NOT maintain full sorted order,
+		 *                                      No null allowed,
+		 *                                      No random access,
+		 *                                      Iteration order is unpredictable.
+		 */
+		
+		// Addition of elements into the list
+		pqc1.add("Rattaiah");
+		pqc1.offer("Manikyam");
+		pqc1.offer("Kiran");
+		pqc1.offer("Vamsi");
+		pqc1.offer("Akash");
+		
+		System.out.println(pqc1);
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(pqc1.peek());
+		
+		System.out.println(pqc1);
+		
+		System.out.println("\n");
+		// Deletion of elements from the list
+		System.out.println(pqc1.poll());
+		System.out.println(pqc1.remove("Kiran"));
+		
+		System.out.println(pqc1);
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(pqc1.contains("Kiran"));
+		
+		System.out.println(pqc1);
+		pqc1.offer("Vamsi");
+		
+		System.out.println("\n");
+		// for each iteration --- Don't Use
+		for (String str : pqc1) {
+			System.out.println(str);
+		}
+		
+		
+		System.out.println("\n");
+		// While iteration --- Use
+		while(!pqc1.isEmpty()) {
+			System.out.println(pqc1.poll());
+		}
+
+		
+		
+		// *************************** ArrayDeque ***************************************
+		// Creation of a PriorityQueue
+		Deque<String> adc1 = new ArrayDeque<>();
+		
+		/*
+		 * ArrayDeque = Fast, resizable, double-ended queue (better than Stack & LinkedList).
+		 * 
+		 * ArrayDeque   --- Introduced in Java 1.6 (Collections Framework)
+		 * Package      --- java.util
+		 * Interfaces   --- Implements Deque (Double Ended Queue)
+		 * Generics     --- Supported <Wrapper Class | Objects>
+		 *
+		 * Concept      --- A resizable array-based Deque
+		 *                  Supports insertion & deletion from BOTH ends
+		 *                  Faster than Stack & LinkedList
+		 *
+		 * Size         --- Number of elements currently stored
+		 * Capacity     --- Dynamic resizing (No fixed capacity)
+		 *                 ArrayDeque<Integer> dq = new ArrayDeque<>(20);
+		 *
+		 * 
+		 * Default Capacity                  --- 17
+		 * Initial Capacity                  --- 
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- No (Null not allowed)
+		 * Maintain insertion order          --- Yes (Based on order of operations)
+		 * Maintain sorted order             --- No
+		 * Random Access                     --- No
+		 * Synchronized                      --- No
+		 * Thread Safe                       --- No (Use ConcurrentLinkedDeque for thread-safety)
+		 *
+		 *
+		 * Internal Structure                --- Resizable circular array
+		 *
+		 *
+		 * What is it good at?               --- Stack replacement (push/pop)
+		 *                                      Queue replacement (offer/poll)
+		 *                                      Implementing BFS
+		 *                                      Fast add/remove from both ends
+		 *                                      More memory efficient than LinkedList
+		 *
+		 *
+		 * Important Methods:
+		 * ---------------------------------
+		 * addFirst(element)      --- Insert at front
+		 * addLast(element)       --- Insert at end
+		 * offerFirst(element)    --- Insert at front (no exception)
+		 * offerLast(element)     --- Insert at end
+		 *
+		 * removeFirst()          --- Remove from front
+		 * removeLast()           --- Remove from end
+		 * pollFirst()            --- Remove from front (no exception)
+		 * pollLast()             --- Remove from end
+		 *
+		 * peekFirst()            --- View first element
+		 * peekLast()             --- View last element
+		 *
+		 *
+		 * Why recommended over Stack?       --- Stack is synchronized (slow, legacy),
+		 *                                      ArrayDeque is faster and modern.
+		 *
+		 *
+		 * Limitations                        --- Does not allow null,
+		 *                                      No random access,
+		 *                                      Not thread-safe.
+		 */
+			
+		// Addition of elements into the list
+		adc1.add("Manikyam");
+		adc1.push("Kiran");
+		adc1.offer("Vamsi");
+		adc1.offerLast("Akash");
+		adc1.addFirst("Rattaiah");
+
+		System.out.println(adc1);
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(adc1.peek());
+		System.out.println(adc1.peekFirst());
+		System.out.println(adc1.peekLast());
+		
+		System.out.println(adc1);
+		
+		
+		System.out.println("\n");
+		// Deletion of elements from the list
+		System.out.println(adc1.poll());
+		System.out.println(adc1.remove("Kiran"));
+		System.out.println(adc1.pollFirst());
+		System.out.println(adc1.pollLast());
+		
+		System.out.println(adc1);
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(adc1.contains("Kiran"));
+		
+		
+		System.out.println("\n");
+		// for each iteration
+		for (String str : adc1) {
+			System.out.println(str);
+		}
+		
+	}
+
+}

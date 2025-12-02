@@ -1,0 +1,25 @@
+package com.kiran.arrays;
+
+import java.util.Arrays;
+
+public class ArrayCreationPratice {
+	public static void main(String[] args) {
+		
+		int[] intArr = new int[5];
+		
+		intArr[0] = 28;
+		intArr[1] = 23;
+		intArr[4] = 13;
+		
+		// Ljava.lang.String --- Array of Strings & hashcode
+		System.out.println(intArr);
+		
+		//Print new array
+		System.out.println(Arrays.toString(intArr));
+		
+		//Print one by one value
+		for (int i = 0; i < intArr.length; i++) {
+			System.out.println(intArr[i]);
+		}
+	}
+}

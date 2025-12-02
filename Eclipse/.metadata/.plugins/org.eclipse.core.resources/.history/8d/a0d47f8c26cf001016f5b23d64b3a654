@@ -1,0 +1,119 @@
+package com.kiran.collection;
+
+import java.util.*;
+
+public class VectorCreationPratice {
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * Size --- No.of elements present in list 
+		 * Capacity --- Array capacity - 10 but you can give any size
+		 *              Vector<String> vc1 = new Vector<>(20);
+		 */
+		
+		
+		// Creation of a vector
+		Vector<String> vc1 = new Vector<>();
+		
+		
+		
+		// Addition of elements into the list
+		vc1.add("Rattaiah");
+		vc1.add("Manikyam");
+		vc1.add("Kiran");
+		vc1.add("Vamsi");
+		vc1.add("Akash");
+		
+		Vector<String> vc2 = new Vector<>();
+		vc2.add("Ravi");
+		vc2.add("Mohan");
+		vc2.add("Vasanth");
+		vc2.add("Yesu");
+		vc2.add("Bala");
+		vc2.add(2,"Pradeep");
+		vc2.add(1,"Sai Kiran");
+		vc2.add(0,"Bakash");
+		
+		
+		vc1.addAll(vc2);
+		vc2.addAll(0,vc1);
+		
+		System.out.println("Size: " + vc1.size());
+		System.out.println("capacity: " + vc1.capacity());
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(vc1.get(6));
+		System.out.println(vc2.getLast());
+		System.out.println(vc2.getFirst());
+		System.out.println(vc1.getClass());
+		System.out.println(vc1.toString());
+		System.out.println(vc1.firstElement());
+		System.out.println(vc1.lastElement());
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Deletion of elements from the list
+		System.out.println(vc1.remove(9));
+		System.out.println(vc1.remove("Bakash"));
+		
+		vc2.clear();    // vc2.removeAllElements(); both same print []
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(vc1);
+		System.out.println(vc2);
+		System.out.println(vc1.contains("Kiran"));
+		System.out.println(vc2.containsAll(vc1));
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Updation of the elements in the list
+		vc1.set(0, "Davidu");
+		System.out.println(vc1);
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		
+		System.out.println("\n");
+		// List<Vector> to convert Array
+		Object[] arr = vc1.toArray();
+		System.out.println(Arrays.toString(arr));
+		
+		System.out.println(vc1);
+		System.out.println(vc2);
+		
+		
+		
+		System.out.println("\n");
+		// Array to convert List<Vector>
+		Object[] array = new Object[] {1,4,3,5,6,7};
+		Vector<Object> vc3 = new Vector<>(Arrays.asList(array));
+		
+		System.out.println(vc3);
+		System.out.println("Size: " + vc3.size());
+		System.out.println("capacity: " + vc3.capacity());
+		
+	}
+}

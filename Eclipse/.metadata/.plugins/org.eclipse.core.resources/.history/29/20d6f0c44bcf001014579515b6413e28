@@ -1,0 +1,40 @@
+package com.kiran.arrays;
+
+public class LinkedListPratice {
+	public static void main(String[] args) {
+		
+		/*
+		 * LinkedList  --- Introduced in Java 1.2 (Collections Framework)
+		 * Collection  --- Part of List, Deque interfaces
+		 * Generics    --- Introduced in Java 1.5 <Wrapper Class | Objects>
+		 *
+		 * Size        --- Number of elements currently stored
+		 * Capacity    --- Not applicable (LinkedList uses nodes, not arrays)
+		 *                 LinkedList<String> ll = new LinkedList<>();
+		 *
+		 *
+		 * Default Capacity                  --- Not applicable (No internal array)
+		 * Initial Capacity                  --- Not applicable
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer random access               --- No (Traversal required, O(n))
+		 * Synchronized (One task at a time) --- No
+		 * Thread Safe                       --- No
+		 *
+		 * Internal Structure                --- Doubly Linked List (Each node has prev & next)
+		 *
+		 * What is it good at?               --- Best for insertion & deletion operations
+		 *                                      Frequent add/remove from start/middle/end,
+		 *                                      Implementing queues, deques, task scheduling.
+		 *
+		 * Performance                       --- add/remove = O(1)
+		 *                                      get/search = O(n)
+		 *
+		 * Limitations                       --- Consumes more memory than ArrayList
+		 *                                      Slow for index-based access
+		 */
+
+	}
+}

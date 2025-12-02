@@ -1,0 +1,13 @@
+package com.kiran.arrays;
+
+public class ArrayAvg {
+	
+	public int avgOfArray(int[] arr) {
+		int sum = 0;
+		
+		for (int value : arr) {
+			
+		}
+	}
+
+}

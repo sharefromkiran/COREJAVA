@@ -1,0 +1,67 @@
+package com.kiran.collection;
+
+public class QueuePratice {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Queue = FIFO data structure where elements enter from rear and exit from front.
+		 * 
+		 * Queue        --- Introduced in Java 1.5 (Collections Framework)
+		 * Package      --- java.util
+		 * Interfaces   --- Queue, Deque, BlockingQueue, etc.
+		 * Generics     --- Supported <Wrapper Class | Objects>
+		 *
+		 * Concept      --- Follows FIFO (First In, First Out)
+		 *                  Elements added at the rear (offer)
+		 *                  Elements removed from the front (poll)
+		 *
+		 * Size         --- Number of elements currently stored
+		 * Capacity     --- Depends on implementation
+		 *                  (LinkedList → No fixed capacity, ArrayDeque → Dynamic capacity)
+		 *
+		 *
+		 * Allow Duplicates                  --- Yes (Most implementations)
+		 * Allow null values                 --- No (Queue generally disallows null — optional)
+		 * Maintain the insertion order      --- Yes (FIFO)
+		 * Maintain the sorted order         --- Only in PriorityQueue
+		 * Offer random access               --- No (Traversal required)
+		 * Synchronized                      --- No (Except ConcurrentLinkedQueue, BlockingQueue)
+		 * Thread Safe                       --- Not by default
+		 *
+		 *
+		 * Common Implementations:
+		 * ---------------------------------
+		 * LinkedList       --- FIFO Queue (non-synchronized)
+		 * ArrayDeque       --- Fast Queue/Deque (recommended)
+		 * PriorityQueue    --- Sorted Queue (min-heap)
+		 * ConcurrentLinkedQueue --- Thread-safe non-blocking queue
+		 * BlockingQueue    --- Thread-safe + waits if full/empty (Producer-Consumer)
+		 *
+		 *
+		 * What is it good at?               --- Scheduling tasks,
+		 *                                      Processing requests in order,
+		 *                                      BFS algorithms,
+		 *                                      Producer-Consumer problems,
+		 *                                      Buffering (I/O, networking),
+		 *                                      Message queues.
+		 *
+		 * Important Queue Methods:
+		 * ---------------------------------
+		 * offer()   --- Insert element (no exception)
+		 * add()     --- Insert element (throws exception on failure)
+		 * poll()    --- Remove and return front element (no exception)
+		 * remove()  --- Remove and return front element (throws exception)
+		 * peek()    --- View front element (no exception)
+		 * element() --- View front element (throws exception)
+		 *
+		 *
+		 * Limitations                        --- No random access,
+		 *                                      Some queues do not allow null,
+		 *                                      PriorityQueue does NOT maintain insertion order.
+		 */
+
+
+	}
+
+}

@@ -1,0 +1,77 @@
+package com.kiran.collection;
+
+import java.util.Stack;
+
+public class StackPratice {
+	public static void main(String[] args) {
+		
+		/*
+		 * Stack        --- Java 1.0 Legacy Class (Extends Vector)
+		 * Collection   --- Added into Collections Framework in Java 1.2
+		 *
+		 * Size         --- Number of elements currently stored
+		 * Capacity     --- Internal array size (Inherited from Vector, Default = 10)
+		 *                  Stack<Integer> st = new Stack<>();
+		 *
+		 *
+		 * Default Capacity                  --- 10  (From Vector)
+		 * Initial Capacity                  --- 10  (Can be increased explicitly)
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer random access               --- Yes (Because internally uses Vector → array)
+		 * Synchronized (One task at a time) --- Yes (Inherited from Vector)
+		 * Thread Safe                       --- Yes (But outdated due to overhead)
+		 *
+		 * Expansion Rule                    --- New capacity = old capacity * 2
+		 *                                      (Same as Vector, doubles when full)
+		 *
+		 * What is it good at?               --- LIFO operations (push, pop, peek),
+		 *                                      Reversing data,
+		 *                                      Expression evaluation (prefix/postfix),
+		 *                                      Backtracking algorithms (DFS, undo operations).
+		 *
+		 * Limitation                        --- Legacy class,
+		 *                                      Slower due to synchronization,
+		 *                                      Recommended alternative → Deque (ArrayDeque, LinkedList)
+		 */
+		
+		
+		/*
+		 * LIFO --- Last in First Out - Stack
+		 * FIFO --- First in Last OUT - Queue
+		 * 
+		 * Stack is a class in java which implements the list interface and extends the vector
+		   and also represents the LIFO principal. 
+		   
+		   ---> Stack is a subclass of the Vector class.  
+		   ---> We only need to understand the additional features provided by Stack.  
+	       ---> For all other details, please refer to VectorPractice.
+	     *
+	     * Methods: push(), peek(), pop(), search()
+	     * 
+		 */
+		
+		
+		// Creation of a vector
+		Stack<String> sc1 = new Stack<>();
+		
+		sc1.push("Red");
+		sc1.push("Black");
+		sc1.push("White");
+		
+		System.out.println(sc1);
+		System.out.println(sc1.peek());
+		System.out.println(sc1);
+		
+		System.out.println(sc1.indexOf("White"));
+		System.out.println(sc1.search("White"));
+		System.out.println(sc1.pop());
+		
+		System.out.println(sc1.isEmpty());
+		System.out.println(sc1.empty());
+		System.out.println(sc1);
+
+	}
+}

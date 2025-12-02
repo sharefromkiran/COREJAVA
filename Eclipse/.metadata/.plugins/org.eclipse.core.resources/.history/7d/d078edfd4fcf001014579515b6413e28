@@ -1,0 +1,64 @@
+package com.kiran.collection;
+
+public class PriorityQueuePratice {
+	public static void main(String[] args) {
+		
+		/*
+		 * PriorityQueue --- Introduced in Java 1.5 (Collections Framework)
+		 * Package       --- java.util
+		 * Generics      --- Supported <Wrapper Class | Objects>
+		 *
+		 * Concept       --- A Queue where elements are ordered by PRIORITY
+		 *                   (Not FIFO)
+		 *                   By default → MIN-HEAP (smallest element first)
+		 *
+		 * Size          --- Number of elements currently stored
+		 * Capacity      --- Grows automatically (Default = 11)
+		 *                   PriorityQueue<Integer> pq = new PriorityQueue<>(20);
+		 *
+		 *
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- No (Null not allowed)
+		 * Maintain insertion order          --- No
+		 * Maintain sorted order             --- Internally yes (Heap), but not for iteration
+		 * Random Access                     --- No
+		 * Synchronized                      --- No
+		 * Thread Safe                       --- No (Use PriorityBlockingQueue for thread-safety)
+		 *
+		 *
+		 * Internal Structure                --- Binary Heap (Min-Heap by default)
+		 *
+		 *
+		 * What is it good at?               --- Scheduling tasks,
+		 *                                      Handling highest/lowest priority items,
+		 *                                      Dijkstra’s algorithm,
+		 *                                      CPU scheduling,
+		 *                                      Real-time task processing.
+		 *
+		 *
+		 * Important PriorityQueue Methods:
+		 * ---------------------------------
+		 * offer(element)       --- Insert element
+		 * add(element)         --- Insert (throws exception if fails)
+		 * peek()               --- View highest-priority element
+		 * poll()               --- Remove and return highest-priority element
+		 * remove()             --- Remove and return (throws exception)
+		 * comparator()         --- Returns custom comparator (if provided)
+		 *
+		 *
+		 * Custom Priority Example:
+		 * ---------------------------------
+		 * PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+		 * (Now it works as Max-Heap)
+		 *
+		 *
+		 * Limitations                        --- Does NOT maintain full sorted order,
+		 *                                      No null allowed,
+		 *                                      No random access,
+		 *                                      Iteration order is unpredictable.
+		 */
+		
+		
+
+	}
+}

@@ -1,0 +1,20 @@
+package com.kiran.basics;
+
+public class LocalVar {
+	
+	int localVar() {
+		int num = 10;   // local Varible
+		
+		return num;
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		LocalVar obj = new LocalVar();
+		
+		
+		System.out.println(obj.localVar());
+	}
+}

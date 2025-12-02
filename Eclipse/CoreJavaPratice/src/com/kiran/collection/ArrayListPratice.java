@@ -1,0 +1,113 @@
+package com.kiran.collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ArrayListPratice {
+	public static void main(String[] args) {
+
+		/*
+		 * ArrayList  --- Introduced in Java 1.2 (Part of Collections Framework)
+		 * Generics   --- Introduced in Java 1.5  <Wrapper Class | Objects>
+		 * Size       --- Number of elements present in the list
+		 * Capacity   --- Internal array size (starts with 10, grows automatically)
+		 *                ArrayList<String> al = new ArrayList<>(20);
+		 *
+		 *
+		 * Default Capacity                  --- 10  
+		 * Initial Capacity                  --- 0
+		 * Allow Duplicates                  --- Yes
+		 * Allow null values                 --- Yes
+		 * Maintain the insertion order      --- Yes
+		 * Maintain the sorted order         --- No
+		 * Offer the random access           --- Yes (because internally uses array)
+		 * Synchronized (One Task at Time)   --- No
+		 * Thread Safe                       --- No
+		 * 
+		 * What is it good at?               --- Best for Single-threaded apps,
+		 *                                      faster than Vector (no overhead),
+		 *                                      dynamic resizing, searching, random access.
+		 *
+		 * Expansion Rule                    --- New capacity = old capacity + (old/2)
+		 *                                      (Grows by 50%, unlike Vector which doubles)
+		 */
+
+
+		// Creation of a vector
+		ArrayList<String> alc1 = new ArrayList<>();
+
+
+		// Addition of elements into the list
+		alc1.add("Rattaiah");
+		alc1.add("Manikyam");
+		alc1.add("Kiran");
+		alc1.add("Vamsi");
+		alc1.add("Akash");
+
+		ArrayList<String> alc2 = new ArrayList<>();
+		alc2.add("Ravi");
+		alc2.add("Mohan");
+		alc2.add("Kiran");
+		alc2.add(1,"Pradeep");
+		alc2.add(0,"Bakash");
+		alc2.add(null);
+		
+		ArrayList<String> alc3 = new ArrayList<>();
+		alc3.addAll(alc2);
+		alc3.addAll(0, alc1);
+		
+		System.out.println("Size: " + alc1.size());  // No capacity Method
+		System.out.println(alc1);
+		System.out.println(alc2);
+		System.out.println(alc3);
+		
+		
+		
+		System.out.println("\n");
+		// Retrival of elements from the list
+		System.out.println(alc1.get(3));
+		System.out.println(alc2.getLast());
+		System.out.println(alc2.getFirst());
+		System.out.println(alc1.getClass());
+		System.out.println(alc1.toString());
+		
+		System.out.println(alc1);
+		System.out.println(alc2);
+		
+		
+		System.out.println("\n");
+		// Verification of elements in the list
+		System.out.println(alc1.contains("Kiran"));
+		System.out.println(alc2.containsAll(alc1));
+		
+		System.out.println(alc1);
+		System.out.println(alc2);
+		
+		
+		System.out.println("\n");
+		// Updation of the elements in the list
+		alc1.set(0, "Davidu");
+		
+		System.out.println(alc1);
+		System.out.println(alc2);
+		
+		
+		System.out.println("\n");
+		// List<ArrayList> to convert Array
+		Object[] arr = alc1.toArray();
+		System.out.println(Arrays.toString(arr));
+		
+		
+		// Array to convert List<Vector>
+		Object[] array = new Object[] {1,4,3,5,6,7};
+		ArrayList<Object> alc4 = new ArrayList<>(Arrays.asList(array));
+		
+		System.out.println(alc4); 
+		
+		
+		// Vector uses synchronization, so its performance is slower.
+		// ArrayList does not use synchronization, so you need to add synchronization manually.
+		Collections.synchronizedList(alc1);
+	}
+}
